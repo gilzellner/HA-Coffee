@@ -1,6 +1,9 @@
 package energy
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 type Electricity struct {
 
@@ -8,4 +11,5 @@ type Electricity struct {
 
 func (e *Electricity) GetPower() {
 	_ = fmt.Sprint("Getting Electricity")
+	time.Sleep(1 * time.Second)
 }
