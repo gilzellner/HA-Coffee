@@ -12,11 +12,11 @@ type Bialetti struct {
 }
 
 type Heat interface {
-	GetElectricity()
+	GetHeat()
 }
 
-func NewBialetti(b Beans, w Water, e Electricity) *DelonghiMagnificaS {
-	return &DelonghiMagnificaS{
+func NewBialetti(b Beans, w Water, e Heat) *Bialetti {
+	return &Bialetti{
 		b: b,
 		w: w,
 		e: e,
@@ -30,7 +30,7 @@ func (d *Bialetti) brewCoffee() {
 }
 
 func (d *Bialetti) GetCoffee() {
-	d.e.GetElectricity()
+	d.e.GetHeat()
 	d.b.GetBeans()
 	d.w.GetWater()
 	fmt.Printf("Brewing Coffee...\n")
