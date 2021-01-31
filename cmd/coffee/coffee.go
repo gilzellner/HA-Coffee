@@ -10,7 +10,8 @@ import (
 func main() {
 	b := beans.New()
 	w := water.New()
-	e := energy.New()
-	c := coffeemachine.New(b, w, e)
+	e := energy.NewElectricity()
+	//e := energy.NewGas()
+	c := coffeemachine.NewDelonghiMagnificaS(b, w, e)
 	c.GetCoffee()
 }

@@ -9,11 +9,11 @@ type Electricity struct {
 
 }
 
-func (e *Electricity) GetPower() {
+func (e *Electricity) GetElectricity() {
 	fmt.Printf("Getting Electricity...\n")
 	time.Sleep(1 * time.Second)
 }
 
-func New() *Electricity {
+func NewElectricity() *Electricity {
 	return &Electricity{}
 }

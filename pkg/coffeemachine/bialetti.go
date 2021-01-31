@@ -5,25 +5,17 @@ import (
 	"time"
 )
 
-type DelonghiMagnificaS struct {
+type Bialetti struct {
 	b Beans
 	w Water
-	e Electricity
+	e Heat
 }
 
-type Water interface {
-	GetWater()
-}
-
-type Beans interface {
-	GetBeans()
-}
-
-type Electricity interface {
+type Heat interface {
 	GetElectricity()
 }
 
-func NewDelonghiMagnificaS(b Beans, w Water, e Electricity) *DelonghiMagnificaS {
+func NewBialetti(b Beans, w Water, e Electricity) *DelonghiMagnificaS {
 	return &DelonghiMagnificaS{
 		b: b,
 		w: w,
@@ -31,21 +23,15 @@ func NewDelonghiMagnificaS(b Beans, w Water, e Electricity) *DelonghiMagnificaS 
 	}
 }
 
-func (d *DelonghiMagnificaS) grindBeans() {
-	fmt.Printf("Grinding Beans...\n")
-	time.Sleep(1 * time.Second)
-}
 
-
-func (d *DelonghiMagnificaS) brewCoffee() {
+func (d *Bialetti) brewCoffee() {
 	fmt.Printf("Brewing Coffee...\n")
 	time.Sleep(1 * time.Second)
 }
 
-func (d *DelonghiMagnificaS) GetCoffee() {
+func (d *Bialetti) GetCoffee() {
 	d.e.GetElectricity()
 	d.b.GetBeans()
-	d.grindBeans()
 	d.w.GetWater()
 	fmt.Printf("Brewing Coffee...\n")
 	time.Sleep(1 * time.Second)
