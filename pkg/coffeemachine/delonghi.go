@@ -2,6 +2,7 @@ package coffeemachine
 
 import (
 	"fmt"
+	"time"
 )
 
 type DelonghiMagnificaS struct {
@@ -32,14 +33,22 @@ func New(b Beans, w Water, e Electricity) *DelonghiMagnificaS {
 
 func (d *DelonghiMagnificaS) grindBeans() {
 	_ = fmt.Sprint("Grinding Beans...")
+	time.Sleep(1 * time.Second)
+}
+
+
+func (d *DelonghiMagnificaS) brewCoffee() {
+	_ = fmt.Sprint("Brewing Coffee...")
+	time.Sleep(1 * time.Second)
 }
 
 func (d *DelonghiMagnificaS) GetCoffee() {
 	d.e.GetPower()
 	d.b.GetBeans()
-
+	d.grindBeans()
 	d.w.GetWater()
 	_ = fmt.Sprint("Brewing Coffee...")
+	time.Sleep(1 * time.Second)
 	_ = fmt.Sprint(
 		"                        (\n" +
 			"                          )     (\n" +
