@@ -32,13 +32,13 @@ func New(b Beans, w Water, e Electricity) *DelonghiMagnificaS {
 }
 
 func (d *DelonghiMagnificaS) grindBeans() {
-	_ = fmt.Sprint("Grinding Beans...")
+	fmt.Printf("Grinding Beans...\n")
 	time.Sleep(1 * time.Second)
 }
 
 
 func (d *DelonghiMagnificaS) brewCoffee() {
-	_ = fmt.Sprint("Brewing Coffee...")
+	fmt.Printf("Brewing Coffee...\n")
 	time.Sleep(1 * time.Second)
 }
 
@@ -47,9 +47,9 @@ func (d *DelonghiMagnificaS) GetCoffee() {
 	d.b.GetBeans()
 	d.grindBeans()
 	d.w.GetWater()
-	_ = fmt.Sprint("Brewing Coffee...")
+	fmt.Printf("Brewing Coffee...\n")
 	time.Sleep(1 * time.Second)
-	_ = fmt.Sprint(
+	fmt.Printf(
 		"                        (\n" +
 			"                          )     (\n" +
 			"                   ___...(-------)-....___\n" +

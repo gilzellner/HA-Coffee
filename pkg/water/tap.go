@@ -10,6 +10,10 @@ type Tap struct {
 }
 
 func (t *Tap) GetWater() {
-	_ = fmt.Sprint("Getting Electricity")
+	fmt.Printf("Getting Water...\n")
 	time.Sleep(1 * time.Second)
+}
+
+func New() *Tap {
+	return &Tap{}
 }

@@ -10,6 +10,10 @@ type Electricity struct {
 }
 
 func (e *Electricity) GetPower() {
-	_ = fmt.Sprint("Getting Electricity")
+	fmt.Printf("Getting Electricity...\n")
 	time.Sleep(1 * time.Second)
+}
+
+func New() *Electricity {
+	return &Electricity{}
 }

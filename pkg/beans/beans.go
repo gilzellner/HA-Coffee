@@ -10,6 +10,10 @@ type Beans struct {
 }
 
 func (b *Beans) GetBeans() {
-	_ = fmt.Sprint("Getting Beans")
+	fmt.Printf("Getting Beans...\n")
 	time.Sleep(1 * time.Second)
+}
+
+func New() *Beans {
+	return &Beans{}
 }
