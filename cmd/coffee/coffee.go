@@ -12,7 +12,7 @@ func main() {
 	w := water.New()
 	//e := energy.NewElectricity()
 	e := energy.NewGas()
-	s := energy.Stove(e)
+	s := energy.NewStove(e)
 	c := coffeemachine.NewBialetti(b, w, s)
 	c.GetCoffee()
 }

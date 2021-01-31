@@ -30,9 +30,9 @@ func (d *Bialetti) brewCoffee() {
 }
 
 func (d *Bialetti) GetCoffee() {
-	d.e.GetHeat()
-	d.b.GetBeans()
 	d.w.GetWater()
+	d.b.GetBeans()
+	d.e.GetHeat()
 	fmt.Printf("Brewing Coffee...\n")
 	time.Sleep(1 * time.Second)
 	fmt.Printf(
